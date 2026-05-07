@@ -1,0 +1,37 @@
+id: LI-001
+category: liability
+name: general_liability_cap
+title: General Liability Cap
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Vendor's aggregate liability under this agreement shall be capped at the
+  greater of (a) two times (2x) the fees paid or payable in the twelve
+  months preceding the event giving rise to liability, or (b) one million
+  dollars ($1,000,000).
+
+fallback_position: |
+  Standard 1x-fees cap acceptable for Moderate and Low tier engagements.
+
+hard_floor: |
+  Liability cap reasonable for engagement scope; no unlimited
+  indemnification expected from vendor outside specified carve-outs.
+
+common_pushback:
+  - objection: Vendor insists on cap at fees paid only.
+    counter: |
+      Accept 1x cap only if super-cap for security incidents (LI-002) is
+      negotiated separately at higher multiple.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: required
+  low: required
+
+framework_mappings:
+  - framework: Industry Standard
+    controls:
+      - Liability Allocation

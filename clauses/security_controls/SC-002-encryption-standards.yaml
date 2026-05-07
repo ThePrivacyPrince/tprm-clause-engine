@@ -1,0 +1,46 @@
+id: SC-002
+category: security_controls
+name: encryption_standards
+title: Encryption Standards
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Vendor shall encrypt customer data both in transit and at rest using
+  industry-standard encryption algorithms and key management practices
+  (minimum AES-256 at rest, TLS 1.2 or higher in transit).
+
+fallback_position: |
+  Compensating controls with risk acceptance for legacy systems with
+  documented retirement timeline.
+
+hard_floor: |
+  Encryption in transit is non-negotiable for any data transmission;
+  encryption at rest is non-negotiable for regulated data.
+
+common_pushback:
+  - objection: Vendor uses TLS 1.0 or 1.1 for legacy customer compatibility.
+    counter: |
+      Require TLS 1.2 minimum with documented sunset date for legacy
+      protocols; risk acceptance must be time-bound (12 months max).
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: required
+  low: preferred
+
+framework_mappings:
+  - framework: NIST 800-53 Rev 5
+    controls:
+      - SC-8
+      - SC-13
+      - SC-28
+  - framework: ISO 27001:2022
+    controls:
+      - A.8.24
+  - framework: PCI DSS 4.0
+    controls:
+      - Requirement 3.5
+      - Requirement 4.2

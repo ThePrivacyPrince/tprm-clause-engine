@@ -1,0 +1,61 @@
+id: IR-001
+category: incident_response
+name: breach_notification
+title: Security Breach Notification
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Vendor shall notify customer of any security breach as soon as possible
+  and in any event no later than twenty-four (24) hours after vendor
+  suspects or becomes aware of the breach. Notification shall include the
+  nature of the breach, categories of data affected, approximate number of
+  records, likely consequences, and measures taken or proposed to address
+  the breach.
+
+fallback_position: |
+  48 to 72 hours notification window with clear definition of "discovery"
+  anchored to formal incident declaration.
+
+hard_floor: |
+  72 hours from confirmed discovery; faster timing required for regulated
+  data per applicable law (e.g., GDPR Article 33).
+
+common_pushback:
+  - objection: Vendor wants extended timeline (often 72 hours minimum) and a "discovery" definition tied to internal confirmation rather than initial detection.
+    counter: |
+      Negotiate tiered notification: initial notification within 24 hours
+      of detection containing minimum required information (nature, scope,
+      data affected); supplemental detail within 72 hours. Tie "discovery"
+      to the earliest of (a) detection by automated monitoring,
+      (b) confirmation by any vendor employee, or (c) third-party
+      notification to vendor. This prevents the "internal investigation"
+      delay tactic.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: required
+  low: required
+
+framework_mappings:
+  - framework: NIST 800-53 Rev 5
+    controls:
+      - IR-6
+  - framework: ISO 27001:2022
+    controls:
+      - A.5.24
+      - A.5.25
+  - framework: GDPR
+    controls:
+      - Article 33
+  - framework: PCI DSS 4.0
+    controls:
+      - "12.10"
+
+notes: |
+  Breach notification is the single most-fought clause in TPRM contract
+  negotiation. The hard floor of 72 hours aligns to GDPR Article 33;
+  faster timing may be required for cardholder data, PHI, or specific
+  state regulations. Always confirm regulatory floor before negotiating.

@@ -1,0 +1,50 @@
+id: CO-001
+category: compliance
+name: right_to_audit
+title: Right to Audit
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Customer shall have the right to audit vendor's compliance with this
+  agreement, including security controls, data protection practices, and
+  consumer request handling. Audits may be conducted by customer or its
+  designated third party, on no less than thirty (30) days' notice (except
+  in the event of a security incident, where notice may be shorter), and
+  at customer's expense unless audit reveals material non-compliance, in
+  which case vendor bears reasonable costs.
+
+fallback_position: |
+  Right to audit satisfied by acceptance of current SOC 2 Type II report
+  covering relevant trust principles, with right to additional review on
+  material change or post-incident.
+
+hard_floor: |
+  Customer has some mechanism for verifying vendor compliance, whether
+  through audit or third-party attestation.
+
+common_pushback:
+  - objection: Vendor refuses any direct audit rights citing operational disruption.
+    counter: |
+      Accept SOC 2 Type II annually plus right to additional review on
+      (a) material change in scope, (b) post-incident, or (c) regulatory
+      inquiry. This is the most common negotiated outcome.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: preferred
+  low: not_applicable
+
+framework_mappings:
+  - framework: NIST 800-53 Rev 5
+    controls:
+      - SR-6
+      - CA-2
+  - framework: ISO 27001:2022
+    controls:
+      - A.5.22
+  - framework: PCI DSS 4.0
+    controls:
+      - Requirement 12.8.4

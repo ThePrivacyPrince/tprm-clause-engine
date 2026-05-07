@@ -1,0 +1,48 @@
+id: OP-001
+category: operational
+name: data_return_and_destruction
+title: Data Return and Destruction
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Upon termination or expiration, vendor shall return all customer data in
+  a customer-readable format and shall destroy all copies (including
+  backups) within ninety (90) days following return, providing written
+  certification of destruction. Vendor may retain data only as required by
+  law and shall continue to protect retained data under the terms of this
+  agreement.
+
+fallback_position: |
+  180-day destruction window acceptable with documented deletion process.
+
+hard_floor: |
+  Data return obligation and destruction certification on termination.
+
+common_pushback:
+  - objection: Vendor cites backup retention policies that exceed destruction window.
+    counter: |
+      Accept extended timeline for backup destruction (up to 12 months) if
+      backups are encrypted, access-controlled, and excluded from
+      processing for any other purpose.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: required
+  low: required
+
+framework_mappings:
+  - framework: NIST 800-53 Rev 5
+    controls:
+      - MP-6
+  - framework: ISO 27001:2022
+    controls:
+      - A.8.10
+  - framework: GDPR
+    controls:
+      - Article 28(3)(g)
+  - framework: PCI DSS 4.0
+    controls:
+      - Requirement 9.4.7

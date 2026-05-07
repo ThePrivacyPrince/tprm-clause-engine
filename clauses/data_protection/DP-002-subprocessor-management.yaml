@@ -1,0 +1,59 @@
+id: DP-002
+category: data_protection
+name: subprocessor_management
+title: Subprocessor Management
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Vendor shall not engage any subprocessor to process customer data without
+  (a) providing customer with prior written notice including full details
+  of processing to be undertaken by the subprocessor, and (b) obtaining
+  customer's written approval. Vendor shall flow down all material
+  obligations of this agreement to subprocessors and shall remain fully
+  liable for subprocessor performance.
+
+fallback_position: |
+  Notice with right to object within a defined window (typically 30 days),
+  with general approval mechanism for an existing list of pre-approved
+  subprocessors.
+
+hard_floor: |
+  Customer must have right to object to new subprocessors, even if the
+  form is opt-out rather than opt-in.
+
+common_pushback:
+  - objection: Vendor wants blanket approval for any subprocessor in their pre-existing list and refuses prior notice for new additions.
+    counter: |
+      Accept pre-approved subprocessor list as Exhibit, but require 30-day
+      prior notice with right to object for any addition outside the list.
+      Material new subprocessors (those processing regulated data or
+      operating in new jurisdictions) trigger reassessment of the underlying
+      engagement.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: required
+  low: preferred
+
+framework_mappings:
+  - framework: GDPR
+    controls:
+      - Article 28(2)
+  - framework: ISO 27001:2022
+    controls:
+      - A.5.21
+  - framework: NIST 800-53 Rev 5
+    controls:
+      - SR-5
+  - framework: NIST CSF 2.0
+    controls:
+      - GV.SC-07
+
+notes: |
+  Subprocessor disclosure failures are a leading cause of breach
+  notification disputes. The contract must establish a clear notification
+  pathway for subprocessor changes; ambiguity here creates downstream
+  liability gaps.

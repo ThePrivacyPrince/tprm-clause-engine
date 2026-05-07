@@ -1,0 +1,40 @@
+id: LI-002
+category: liability
+name: security_incident_super_cap
+title: Super-Cap for Security Incidents
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Notwithstanding the general liability cap, vendor's liability for
+  breaches of confidentiality obligations, data protection obligations, or
+  security incidents resulting from vendor's gross negligence or willful
+  misconduct shall be capped at five times (5x) the general cap or fully
+  uncapped, depending on engagement scope.
+
+fallback_position: |
+  3x super-cap or uncapped for direct damages with consequential damage
+  limitation.
+
+hard_floor: |
+  Some elevated liability tier exists for security incidents; standard
+  liability cap should not apply to data breach scenarios.
+
+common_pushback:
+  - objection: Vendor refuses any elevated cap for security incidents.
+    counter: |
+      At minimum carve out direct damages from breach (notification costs,
+      forensic, regulatory fines) from the general cap. These should not
+      compete with operational damages for cap room.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: preferred
+  low: not_applicable
+
+framework_mappings:
+  - framework: Industry Standard
+    controls:
+      - Security-Specific Liability

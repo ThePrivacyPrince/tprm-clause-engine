@@ -1,0 +1,54 @@
+id: SC-001
+category: security_controls
+name: information_security_program
+title: Information Security Program
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Vendor shall maintain a written information security plan including
+  administrative, physical, technical, and organizational procedures,
+  practices, and safeguards designed to protect customer data and vendor's
+  facilities, systems, networks, and assets against external and internal
+  threats. The plan shall align to one or more recognized frameworks: NIST
+  Cybersecurity Framework, ISO/IEC 27001, ISO/IEC 27002, NIST 800-171, NIST
+  800-53, and applicable industry standards including PCI DSS where
+  relevant.
+
+fallback_position: |
+  Self-attested security program with annual certification; reliance on
+  parent organization's program acceptable with documented inheritance.
+
+hard_floor: |
+  Documented information security program covering administrative,
+  technical, and physical safeguards.
+
+common_pushback:
+  - objection: Vendor cites internal program but cannot share documentation.
+    counter: |
+      Accept executive summary or third-party attestation (SOC 2 Type II)
+      in lieu of full program documentation.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: required
+  low: required
+
+framework_mappings:
+  - framework: NIST 800-53 Rev 5
+    controls:
+      - SR-3
+      - PM-1
+  - framework: NIST CSF 2.0
+    controls:
+      - GV.PO-01
+      - GV.SC-05
+  - framework: ISO 27001:2022
+    controls:
+      - A.5.19
+      - A.5.20
+  - framework: PCI DSS 4.0
+    controls:
+      - Requirement 12.8.2

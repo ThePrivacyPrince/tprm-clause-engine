@@ -1,0 +1,48 @@
+id: IR-002
+category: incident_response
+name: investigation_coordination
+title: Investigation Coordination
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Following notification of a security breach, the parties shall coordinate
+  to investigate the breach. Vendor agrees to cooperate with the
+  investigation, provide forensic information as reasonably requested, and
+  immediately remediate any breach. Vendor shall not inform any third party
+  of any security breach without first obtaining customer's written
+  consent, except as required by law.
+
+fallback_position: |
+  Cooperation framework acceptable with reasonable scope limits;
+  pre-approved disclosure to specific regulators acceptable.
+
+hard_floor: |
+  Vendor cooperates with customer's incident response process and does not
+  unilaterally disclose to third parties.
+
+common_pushback:
+  - objection: Vendor wants right to make public disclosure on its own timeline.
+    counter: |
+      Require coordination on public statements; vendor may disclose to
+      regulators where legally required but must notify customer
+      contemporaneously.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: required
+  low: required
+
+framework_mappings:
+  - framework: NIST 800-53 Rev 5
+    controls:
+      - IR-4
+  - framework: NIST CSF 2.0
+    controls:
+      - RS.CO-03
+  - framework: ISO 27001:2022
+    controls:
+      - A.5.26
+      - A.5.27

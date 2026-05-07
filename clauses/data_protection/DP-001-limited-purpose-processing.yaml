@@ -1,0 +1,49 @@
+id: DP-001
+category: data_protection
+name: limited_purpose_processing
+title: Limited Purpose Processing
+version: 1.0.0
+last_updated: 2026-05-06
+author: Irvens Eristil
+
+standard_position: |
+  Vendor shall process personal data solely for the limited and specific
+  business purposes identified in the agreement and shall not process
+  personal data for any other purpose, including for vendor's own business
+  purposes, marketing, or analytics.
+
+fallback_position: |
+  Add explicit list of permitted secondary purposes with customer
+  pre-approval requirement.
+
+hard_floor: |
+  No retention of personal data for vendor's independent commercial use.
+
+common_pushback:
+  - objection: Vendor wants right to use aggregated or de-identified data.
+    counter: |
+      Permit aggregation only with documented de-identification methodology
+      and contractual prohibition on re-identification.
+
+tier_requirements:
+  critical: required
+  high: required
+  moderate: required
+  low: required
+
+framework_mappings:
+  - framework: NIST 800-53 Rev 5
+    controls:
+      - SR-3
+  - framework: NIST CSF 2.0
+    controls:
+      - GV.SC-05
+  - framework: ISO 27001:2022
+    controls:
+      - A.5.19
+  - framework: GDPR
+    controls:
+      - Article 28
+  - framework: CCPA/CPRA
+    controls:
+      - Service Provider Provisions

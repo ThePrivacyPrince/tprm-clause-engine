@@ -1,0 +1,40 @@
+VENDOR SERVICES AGREEMENT — DATA & SECURITY TERMS (SAMPLE)
+
+1. SECURITY PROGRAM. Vendor shall maintain commercially reasonable security
+measures appropriate to the services. Vendor maintains a written information
+security program covering administrative, physical, and technical safeguards
+consistent with ISO/IEC 27001.
+
+2. ACCESS. Vendor shall enforce access on a least privilege basis and require
+multi-factor authentication for remote access to systems containing Customer
+data.
+
+3. AUDIT. Customer shall have the right to audit Vendor's compliance no more
+than once per year, upon reasonable notice. Vendor may provide a summary report
+in lieu of an on-site audit at Vendor's sole discretion.
+
+4. SUBCONTRACTORS. Vendor may engage subcontractors in its discretion to perform
+portions of the services.
+
+5. USE OF DATA. Vendor may process Customer data to provide the services and to
+improve its services and develop new products.
+
+6. BREACH NOTIFICATION. Vendor will notify Customer of a confirmed security
+breach as soon as practicable, and in any event within 72 hours of confirmation.
+
+7. INSURANCE. Vendor maintains insurance as it deems appropriate.
+
+8. LIABILITY. In no event shall Vendor's aggregate liability exceed the fees paid
+in the twelve months preceding the claim. No exceptions to the cap shall apply.
+
+9. INDEMNIFICATION. The parties shall provide mutual indemnification for
+third-party claims arising from their respective gross negligence.
+
+10. TERMINATION. Upon termination, Vendor will return or destroy Customer data,
+provided that Vendor may retain archival copies as required by its internal
+retention policy.
+
+11. PENETRATION TESTING. Vendor performs vulnerability scanning periodically.
+
+12. CONSUMER REQUESTS. Vendor will provide reasonable assistance with consumer
+privacy requests.

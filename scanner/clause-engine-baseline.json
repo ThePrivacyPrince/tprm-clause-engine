@@ -1,0 +1,232 @@
+{
+  "schema": "nbcu-clause-baseline/v2",
+  "description": "Clause baseline for the security clause linter. Each entry is a clause the engine checks a vendor contract (MSA/DPA) for. 'detect.present_if' = phrases that signal the clause exists; 'detect.red_flags' = weak/one-sided language to flag even when present; 'detect.required_value' = a specific value to enforce. crown_jewels uses the division keys: parks, studios, stream, news, sports, corp, all.",
+  "generated_for": "Irvens Eristil — NBCU Security Assurance / Governance prep",
+  "clauses": [
+    {
+      "id": "SEC-01", "name": "Information Security Requirements / Security Exhibit",
+      "category": "security", "source": "NBCU security baseline", "severity": "critical",
+      "frameworks": ["NIST 800-53", "ISO 27001"], "crown_jewels": ["all"],
+      "obligation": "Vendor maintains the controls listed in a security exhibit/schedule (encryption, access control, logging, patching), tied to a named standard.",
+      "detect": { "present_if": ["security exhibit", "information security requirements", "security schedule", "appropriate technical and organizational measures"], "red_flags": ["reasonable security", "industry standard security", "commercially reasonable efforts"] },
+      "elite_position": "Tie the exhibit to a named standard (ISO 27001 / SOC 2 / NIST) so 'reasonable security' is a measurable bar with evidence, not an argument."
+    },
+    {
+      "id": "SEC-02", "name": "Right to Audit / Assessment",
+      "category": "security", "source": "NBCU security baseline", "severity": "critical",
+      "frameworks": ["SOC 2", "TPN"], "crown_jewels": ["studios", "corp"],
+      "obligation": "Customer may assess the vendor on-site, remotely, or via accepted attestations (SOC 2 Type II, TPN Gold, PCI AOC), with a reserved direct-audit right on an incident.",
+      "detect": { "present_if": ["right to audit", "audit", "assessment", "upon reasonable notice"], "red_flags": ["no more than once per year", "at vendor's sole discretion", "vendor will provide a summary in lieu of audit"] },
+      "elite_position": "Accept SOC 2 / TPN to move fast, but reserve a direct audit on a security event or material change. Never give that right away entirely."
+    },
+    {
+      "id": "SEC-03", "name": "Security Incident & Breach Notification",
+      "category": "security", "source": "NBCU security baseline", "severity": "critical",
+      "frameworks": ["State breach laws", "GDPR"], "crown_jewels": ["corp", "stream"],
+      "obligation": "Vendor notifies of a breach within a defined window from discovery, with defined triggers, cooperation duties, and no public disclosure without sign-off.",
+      "detect": { "present_if": ["security breach", "notify", "incident", "hours"], "red_flags": ["as soon as practicable", "without undue delay", "upon confirmation", "within a reasonable time", "72 hours", "five business days"], "required_value": "24 hours (per uploaded addendum)" },
+      "elite_position": "Demand notice within 24-72h of DISCOVERY (not 'confirmation'), defined triggers, and a ban on third-party disclosure without sign-off."
+    },
+    {
+      "id": "SEC-04", "name": "Data Return & Secure Destruction",
+      "category": "security", "source": "NBCU security baseline", "severity": "critical",
+      "frameworks": ["NIST", "ISO 27001"], "crown_jewels": ["corp"],
+      "obligation": "On termination, vendor returns or certifiably destroys customer data within a fixed window, with written attestation and no surviving archival copies.",
+      "detect": { "present_if": ["return or destroy", "secure destruction", "upon termination", "certify destruction"], "red_flags": ["may retain", "archival copies", "backup retention", "as required by law"] },
+      "elite_position": "Require certified destruction within a fixed window post-termination, with written attestation. The exact gap FBCS left open."
+    },
+    {
+      "id": "SEC-05", "name": "Data Retention & Purpose Limitation",
+      "category": "security", "source": "NBCU security baseline", "severity": "high",
+      "frameworks": ["GDPR", "CCPA"], "crown_jewels": ["stream", "corp"],
+      "obligation": "Vendor uses data only for the stated service, retains it only as long as needed, and never for its own product/AI training.",
+      "detect": { "present_if": ["solely for the purpose", "retention", "purpose limitation", "only to the extent necessary"], "red_flags": ["for its own business purposes", "to improve its services", "to train", "aggregate and anonymize"] },
+      "elite_position": "Bind use to the stated service only, ban product/AI training on your data, and require deletion on a defined schedule."
+    },
+    {
+      "id": "SEC-06", "name": "Subcontractor / Fourth-Party Flowdown",
+      "category": "security", "source": "NBCU security baseline", "severity": "high",
+      "frameworks": ["TPRM", "TPN"], "crown_jewels": ["stream", "studios"],
+      "obligation": "Vendor obtains prior written approval for sub-processors and flows all security terms down to them, remaining liable for their failures.",
+      "detect": { "present_if": ["subcontractor", "subprocessor", "flow down", "prior written", "remain liable"], "red_flags": ["may engage subcontractors", "in its discretion", "without prior approval"] },
+      "elite_position": "Require prior written approval and full flowdown; the vendor stays liable for its subs (the Anodot fourth-party lesson)."
+    },
+    {
+      "id": "SEC-07", "name": "Limitation of Liability - breach carve-out",
+      "category": "security", "source": "NBCU security baseline", "severity": "critical",
+      "frameworks": ["Risk transfer"], "crown_jewels": ["all"],
+      "obligation": "Data-breach, confidentiality, and IP-infringement liability are carved out of the general liability cap or given a higher super-cap.",
+      "detect": { "present_if": ["limitation of liability", "carve-out", "super-cap", "shall not apply to", "excluded from the cap"], "red_flags": ["in no event", "aggregate liability shall not exceed fees", "no exceptions to the cap"] },
+      "elite_position": "Carve breach/confidentiality/IP liability out of the general cap. The most-fought clause in any security negotiation."
+    },
+    {
+      "id": "SEC-08", "name": "Indemnification",
+      "category": "security", "source": "NBCU security baseline", "severity": "high",
+      "frameworks": ["Risk transfer"], "crown_jewels": ["stream", "corp"],
+      "obligation": "Vendor indemnifies for losses from claims caused by its breach or IP infringement, including regulatory fines and defense costs.",
+      "detect": { "present_if": ["indemnify", "indemnification", "hold harmless", "defense costs", "regulatory fines"], "red_flags": ["mutual indemnification only", "excludes regulatory penalties", "subject to the liability cap"] },
+      "elite_position": "Get explicit indemnity for breaches caused by failure to meet the security exhibit, covering defense costs and regulatory penalties."
+    },
+    {
+      "id": "SEC-09", "name": "Cyber Insurance",
+      "category": "security", "source": "NBCU security baseline", "severity": "high",
+      "frameworks": ["Risk transfer"], "crown_jewels": ["all"],
+      "obligation": "Vendor carries cyber/E&O coverage at a stated minimum, provides certificates, and gives notice of lapse.",
+      "detect": { "present_if": ["cyber insurance", "errors and omissions", "certificate of insurance", "coverage", "policy limits"], "red_flags": ["self-insured", "coverage as it deems appropriate", "no minimum specified"] },
+      "elite_position": "Set coverage minimums proportional to data sensitivity, require certificates, and notice of any lapse."
+    },
+    {
+      "id": "SEC-10", "name": "Compliance with Laws + Framework Flowdown",
+      "category": "security", "source": "NBCU security baseline", "severity": "high",
+      "frameworks": ["PCI DSS", "TPN", "ISO 27001"], "crown_jewels": ["parks", "studios"],
+      "obligation": "Vendor complies with applicable laws and named standards (PCI AOC for payments, TPN Gold for content), with a defined evidence cadence.",
+      "detect": { "present_if": ["comply with all applicable laws", "PCI DSS", "TPN", "attestation of compliance", "annual"], "red_flags": ["comply with applicable laws", "where applicable"], "required_value": "named standard + annual evidence cadence" },
+      "elite_position": "Name the exact standard and evidence cadence (annual AOC, current TPN status). 'Comply with applicable laws' alone is unenforceable."
+    },
+    {
+      "id": "SEC-11", "name": "Data Processing Addendum (DPA)",
+      "category": "security", "source": "NBCU security baseline", "severity": "critical",
+      "frameworks": ["GDPR", "CCPA", "VPPA"], "crown_jewels": ["stream", "corp"],
+      "obligation": "A DPA governs controller/processor roles, lawful processing, data-subject rights, transfer mechanisms, and tracking-tech limits. See DPA-01..14 for components.",
+      "detect": { "present_if": ["data processing addendum", "processor", "controller", "personal data"], "red_flags": ["no DPA attached", "privacy terms to be agreed later"] },
+      "elite_position": "For streaming/ad-tech, embed VPPA-aware terms barring disclosure of viewing data and unconsented pixel/tag deployment."
+    },
+    {
+      "id": "SEC-12", "name": "Access Control & Remote Access",
+      "category": "security", "source": "NBCU security baseline", "severity": "high",
+      "frameworks": ["NIST AC-3", "IAM"], "crown_jewels": ["parks", "corp"],
+      "obligation": "Least privilege, MFA, and governed remote/physical access for any vendor touching the environment or facilities.",
+      "detect": { "present_if": ["least privilege", "multi-factor", "MFA", "access control", "remote access", "session logging"], "red_flags": ["shared accounts", "standing access", "no MFA requirement"] },
+      "elite_position": "Require MFA, just-in-time access, no shared accounts, and session logging. The HVAC-vendor-to-POS entry point lives here."
+    },
+    {
+      "id": "SEC-13", "name": "Vulnerability Management & Pen Testing",
+      "category": "security", "source": "NBCU security baseline", "severity": "high",
+      "frameworks": ["NIST", "CIS", "PCI 6/11"], "crown_jewels": ["all"],
+      "obligation": "Patching SLAs, regular vulnerability scans, and annual third-party penetration testing with results shared on request.",
+      "detect": { "present_if": ["vulnerability", "penetration test", "patch", "remediation", "scanning"], "red_flags": ["best efforts to patch", "no remediation timeline", "results confidential and not shared"] },
+      "elite_position": "Tie critical-vuln remediation to a fixed SLA, require annual third-party pen tests, and the right to a summary of findings."
+    },
+    {
+      "id": "SEC-14", "name": "Business Continuity / Availability SLA",
+      "category": "security", "source": "NBCU security baseline", "severity": "high",
+      "frameworks": ["BCP", "DR"], "crown_jewels": ["sports"],
+      "obligation": "Defined availability commitments, tested DR, financial penalties, and heightened obligations during high-availability windows.",
+      "detect": { "present_if": ["availability", "uptime", "service level", "business continuity", "disaster recovery", "failover"], "red_flags": ["commercially reasonable uptime", "no SLA credits", "untested DR"] },
+      "elite_position": "Set uptime SLAs with real financial penalties, require tested failover, and add heightened obligations during marquee live-event windows."
+    },
+
+    {
+      "id": "DPA-01", "name": "Purpose Limitation & Standard of Processing",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Standard of care", "severity": "high",
+      "frameworks": ["GDPR", "CCPA"], "crown_jewels": ["stream", "corp"],
+      "obligation": "Vendor processes data only for limited, specific business purposes, on documented instructions, to a defined standard of care.",
+      "detect": { "present_if": ["limited and specific business purposes", "documented instructions", "standard of processing", "standard of care"], "red_flags": ["for any lawful purpose", "as the company sees fit", "for its legitimate business interests"] },
+      "elite_position": "Define the permitted purpose narrowly in the contract and require processing strictly on documented instructions. Anything outside is a breach."
+    },
+    {
+      "id": "DPA-02", "name": "No-Sale / No Secondary Use",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - No rights to process", "severity": "critical",
+      "frameworks": ["VPPA", "CCPA"], "crown_jewels": ["stream"],
+      "obligation": "Vendor shall not sell personal data or process it for its own purposes, including training its own products/AI.",
+      "detect": { "present_if": ["shall not sell", "not sell or process", "no rights to process", "outside the direct business relationship"], "red_flags": ["may use for analytics", "to improve our services", "to train", "aggregate"] },
+      "elite_position": "Explicit 'shall not sell or share' + 'no use beyond this relationship' + a ban on training the vendor's products/AI. Non-negotiable for ad-tech."
+    },
+    {
+      "id": "DPA-03", "name": "Confidentiality & Personnel Reliability",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Reliability of authorized personnel", "severity": "high",
+      "frameworks": ["ISO 27001", "NIST"], "crown_jewels": ["studios", "news"],
+      "obligation": "Vendor maintains confidentiality, limits access to authorized personnel, and ensures their reliability via vetting and background checks.",
+      "detect": { "present_if": ["confidentiality", "authorized personnel", "reliability", "background checks", "limit access"], "red_flags": ["personnel as needed", "no background check requirement"] },
+      "elite_position": "Confidentiality surviving termination, role-based least-privilege access, and background checks for anyone touching sensitive content or source material."
+    },
+    {
+      "id": "DPA-04", "name": "Subprocessor Approval & Notice",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Subprocessor appointment", "severity": "high",
+      "frameworks": ["GDPR Art. 28"], "crown_jewels": ["stream", "corp"], "cross_ref": "SEC-06",
+      "obligation": "Vendor gives written notice with full processing detail and obtains written approval before appointing any subprocessor; no transfer of data to anyone but the customer.",
+      "detect": { "present_if": ["appoint any subprocessor", "written approval", "written notice", "full details of the processing"], "red_flags": ["list of subprocessors on its website", "general authorization", "may engage without notice"] },
+      "elite_position": "Keep approval prospective and specific: name, location, exact processing scope per subprocessor. A website list is not approval."
+    },
+    {
+      "id": "DPA-05", "name": "Consumer Rights / DSAR Assistance",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Consumer requests", "severity": "high",
+      "frameworks": ["CCPA", "GDPR"], "crown_jewels": ["stream", "corp"],
+      "obligation": "Vendor notifies of consumer requests (opt-out, deletion, limit-use), forwards them, and assists fulfillment within a fixed window (10 days per addendum).",
+      "detect": { "present_if": ["consumer request", "opt out", "deletion", "limit use", "assist", "10 days"], "red_flags": ["reasonable assistance", "no defined timeline", "as time permits"], "required_value": "10 days" },
+      "elite_position": "Pin the assistance SLA to 10 days and require the vendor to forward any consumer request or complaint immediately, not sit on it."
+    },
+    {
+      "id": "DPA-06", "name": "DSAR Audit & Records",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Consumer request audit", "severity": "high",
+      "frameworks": ["CCPA", "GDPR"], "crown_jewels": ["stream", "corp"],
+      "obligation": "Vendor keeps complete, accurate records of consumer-request handling and grants audit access to records, systems, and personnel involved.",
+      "detect": { "present_if": ["records relating to", "consumer request", "audit", "access at all reasonable times", "systems used to respond"], "red_flags": ["records confidential", "summary only", "no access to systems"] },
+      "elite_position": "Reserve a right to audit consumer-request handling specifically - records, systems, and personnel - so 'we honored it' is verifiable."
+    },
+    {
+      "id": "DPA-07", "name": "Deletion Verification",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Verify deletion", "severity": "high",
+      "frameworks": ["CCPA", "GDPR"], "crown_jewels": ["stream"],
+      "obligation": "Vendor provides documentation verifying it no longer processes data of individuals who made a valid deletion request.",
+      "detect": { "present_if": ["documentation that verifies", "no longer processes", "valid request to delete", "confirmation of deletion"], "red_flags": ["will endeavor to delete", "no verification provided"] },
+      "elite_position": "Require written confirmation of deletion per request. An unverified deletion is the same regulatory exposure as no deletion."
+    },
+    {
+      "id": "DPA-08", "name": "Data Protection Impact Assessment (DPIA)",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Carry out a DPIA", "severity": "high",
+      "frameworks": ["GDPR Art. 35"], "crown_jewels": ["stream", "parks"],
+      "obligation": "Vendor conducts or supports a DPIA for high-risk processing (notably biometric and minors' data).",
+      "detect": { "present_if": ["data protection impact assessment", "DPIA", "high-risk processing"], "red_flags": ["if required by law only", "at customer's sole cost"] },
+      "elite_position": "Require DPIA cooperation for any new high-risk processing - especially biometric or children's data - before go-live, not after a regulator asks."
+    },
+    {
+      "id": "DPA-09", "name": "Data Accuracy Notification",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Inaccurate/outdated data", "severity": "high",
+      "frameworks": ["GDPR", "CCPA"], "crown_jewels": ["corp", "stream"],
+      "obligation": "Vendor notifies without delay if data it processes becomes inaccurate or outdated.",
+      "detect": { "present_if": ["inaccurate", "outdated", "notify", "without delay"], "red_flags": ["periodic review only", "no notification duty"] },
+      "elite_position": "Make accuracy a notification trigger, not a best-effort goal - 'without delay' upon discovering inaccurate or stale data."
+    },
+    {
+      "id": "DPA-10", "name": "Cross-Border Transfer Mechanisms",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Transfer mechanisms", "severity": "critical",
+      "frameworks": ["EU SCCs", "UK GDPR", "Swiss FADP"], "crown_jewels": ["stream", "corp"],
+      "obligation": "No transfer to other jurisdictions without an approved mechanism. UK GDPR -> EU SCCs (SCCs prevail on conflict); Switzerland -> Swiss FADP.",
+      "detect": { "present_if": ["transfer", "standard contractual clauses", "SCCs", "Switzerland", "UK GDPR", "restricted transfer"], "red_flags": ["may transfer globally", "no mechanism specified", "transfers at vendor's discretion"] },
+      "elite_position": "Default to data residency. Where transfers are needed, attach current SCCs plus UK/Swiss addenda, and state SCCs override on conflict."
+    },
+    {
+      "id": "DPA-11", "name": "Written Information Security Plan (WISP)",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Infosec plan", "severity": "high",
+      "frameworks": ["NIST", "ISO 27001", "ISO 27002", "NIST 800-171", "NIST 800-53", "PCI DSS"], "crown_jewels": ["all"],
+      "obligation": "Vendor maintains a written security plan with administrative, physical, and technical safeguards, mapped to a named accepted framework.",
+      "detect": { "present_if": ["written information security", "administrative, physical, technical", "safeguards", "NIST", "ISO/IEC 27001"], "red_flags": ["informal program", "no written plan", "no framework named"] },
+      "elite_position": "Require the WISP to map to a specific accepted framework and to be produced on request. A 'program' with no written plan is unauditable."
+    },
+    {
+      "id": "DPA-12", "name": "Compliance Demonstration & Monitoring",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Demonstrate compliance / monitor", "severity": "high",
+      "frameworks": ["SOC 2", "audit rights"], "crown_jewels": ["all"],
+      "obligation": "Vendor makes information available to prove compliance, monitors via manual reviews/automated scans/assessments at least annually, and provides audit reports on request.",
+      "detect": { "present_if": ["demonstrate compliance", "automated scans", "manual reviews", "at least once a year", "audit report upon request", "12 months"], "red_flags": ["self-certify only", "no monitoring cadence", "report not provided"], "required_value": "at least every 12 months" },
+      "elite_position": "Tie monitoring to a 12-month cadence and require the audit report, not just an assertion. Reserve a right to remediate unauthorized use."
+    },
+    {
+      "id": "DPA-13", "name": "24/7 Security Contact & 24-Hour Breach Notice",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Security breach procedures", "severity": "critical",
+      "frameworks": ["State breach laws", "GDPR"], "crown_jewels": ["corp", "stream"], "cross_ref": "SEC-03",
+      "obligation": "Named security contact available 24/7/365; breach notice within 24 hours of suspicion or awareness; coordinate, cooperate, remediate; no third-party disclosure without consent; cooperate in litigation at own expense.",
+      "detect": { "present_if": ["24 hours", "primary information security contact", "24/7", "365", "shall not inform any third party", "no later than"], "red_flags": ["72 hours", "as soon as practicable", "may disclose as required", "business hours only"], "required_value": "24 hours; named 24/7/365 contact" },
+      "elite_position": "Hold the 24-hour line, the named 24/7 contact, and the gag on third-party disclosure. This is the clause that rewrites the FBCS 5-month ending."
+    },
+    {
+      "id": "DPA-14", "name": "Accuracy of Representations",
+      "category": "privacy", "source": "Privacy Addendum (uploaded) - Info provided must be true", "severity": "high",
+      "frameworks": ["Contractual"], "crown_jewels": ["all"],
+      "obligation": "All information the vendor represents about its security and processing must be true; a misrepresentation is itself a breach.",
+      "detect": { "present_if": ["information provided", "must be true", "accurate and complete", "representations"], "red_flags": ["to the best of its knowledge", "no warranty as to accuracy"] },
+      "elite_position": "Keep an explicit truthfulness rep so a false questionnaire answer or stale attestation is a breach, not just an awkward conversation."
+    }
+  ]
+}
